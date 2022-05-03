@@ -1,5 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QWidget, QApplication
+from PyQt5.uic import loadUi
 from qt_material import apply_stylesheet
 
 class MainWindow(QWidget):
@@ -14,6 +15,7 @@ class MainWindow(QWidget):
         # self.setGeometry(100, 100, 800, 600)
         # Instead of the above line, the below line is used to resize the window correctly without changing up its position.
         self.resize(800, 600)
+
         # The below line is used to show the window in the center of the screen. (The centering is done by the window
         # manager automatically.)
         self.show()
