@@ -1,6 +1,7 @@
 import sys
 from PyQt5.QtWidgets import QWidget, QApplication
 from qt_material import apply_stylesheet
+from PyQt5.uic import loadUi
 
 
 class MainWindow(QWidget):
@@ -9,6 +10,8 @@ class MainWindow(QWidget):
         self.init()
 
     def init(self):
+        # Load the UI file
+        loadUi("design.ui", self)
         apply_stylesheet(self, theme="dark_cyan.xml")
         self.setWindowTitle("Data Manager")
         # The below line is required to resize the window but the side effect is that the window is not positioned
@@ -22,7 +25,7 @@ class MainWindow(QWidget):
 
 def main():
     app = QApplication(sys.argv)
-    MainWindow()
+    UI = MainWindow()
     sys.exit(app.exec_())
 
 
